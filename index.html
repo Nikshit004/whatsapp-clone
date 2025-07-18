@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WhatsApp Clone</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+  
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0b141a;
+      color: #fff;
+      padding: 20px;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+  
+    #chat-container {
+      flex: 1;
+      background: #1e2a33;
+      border: 1px solid #2f3e46;
+      border-radius: 10px;
+      padding: 15px;
+      overflow-y: auto;
+      margin-bottom: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .message {
+      max-width: 70%;
+      padding: 10px 15px;
+      margin: 8px 0;
+      border-radius: 20px;
+      word-wrap: break-word;
+      line-height: 1.4;
+      display: block;
+      clear: both;
+    }
+  
+    .left {
+      background: #262d31;
+      color: #f1f1f1;
+      align-self: flex-start;
+      border-bottom-left-radius: 0;
+    }
+  
+    .right {
+      background: #00a884;
+      color: white;
+      align-self: flex-end;
+      border-bottom-right-radius: 0;
+    }
+  
+    .center {
+      text-align: center;
+      color: #aaa;
+      font-style: italic;
+      margin: 10px 0;
+    }
+  
+    #send-container {
+      display: flex;
+      gap: 10px;
+    }
+  
+    #messageInp {
+      flex: 1;
+      padding: 12px;
+      border-radius: 30px;
+      border: none;
+      outline: none;
+      font-size: 16px;
+      background-color: #2a3942;
+      color: white;
+    }
+  
+    #send-container button {
+      padding: 12px 20px;
+      background-color: #00a884;
+      border: none;
+      color: white;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+  
+    #send-container button:hover {
+      background-color: #019071;
+    }
+  
+    @media (max-width: 600px) {
+      .message {
+        max-width: 85%;
+      }
+  
+      #messageInp {
+        font-size: 14px;
+      }
+  
+      #send-container button {
+        font-size: 14px;
+        padding: 10px 16px;
+      }
+    }
+  </style>
+  
+</head>
+<body>
+
+  <div id="chat-container" class="container"></div>
+
+  <form id="send-container">
+    <input type="text" id="messageInp" placeholder="Type a message" required autocomplete="off" />
+    <button type="submit">Send</button>
+  </form>
+
+  <script src="http://localhost:5502/socket.io/socket.io.js"></script>
+  <script src="./javascript/client.js"></script>
+</body>
+</html>
